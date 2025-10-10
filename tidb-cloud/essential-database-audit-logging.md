@@ -138,8 +138,8 @@ You can enable audit logging for a {{{ .essential }}} cluster using the TiDB Clo
 >
 > Enabling audit logging alone does not generate audit logs. You must also configure filters to specify which events to log. For more information, see [Manage audit logging filter rules](#manage-audit-logging-filter-rules).
 
-<SimpleTab>
-<div label="Console">
+<SimpleTab groupId="method">
+<div label="Console" value="console">
 
 1. Log in to the [TiDB Cloud console](https://tidbcloud.com/) and navigate to the [**Clusters**](https://tidbcloud.com/project/clusters) page of your project.
 
@@ -157,7 +157,7 @@ You can enable audit logging for a {{{ .essential }}} cluster using the TiDB Clo
 
 </div>
 
-<div label="CLI">
+<div label="CLI" value="cli">
 
 Take Amazon S3 storage as an example. To enable audit logging and store audit logs in Amazon S3, run the following command:
 
@@ -174,8 +174,8 @@ The `--rotation-size-mib`, `--rotation-interval-minutes`, and `--unredacted` par
 
 You can edit the audit logging for a {{{ .essential }}} cluster after enabling it.
 
-<SimpleTab>
-<div label="Console">
+<SimpleTab groupId="method">
+<div label="Console" value="console">
 
 1. Log in to the [TiDB Cloud console](https://tidbcloud.com/) and navigate to the [**Clusters**](https://tidbcloud.com/project/clusters) page of your project.
 
@@ -191,7 +191,7 @@ You can edit the audit logging for a {{{ .essential }}} cluster after enabling i
 
 </div>
 
-<div label="CLI">
+<div label="CLI" value="cli">
 
 To update the audit logging settings using the TiDB Cloud CLI, run the following command:
 
@@ -206,8 +206,8 @@ ticloud serverless audit-log config update -c <cluster-id> --rotation-size-mib <
 
 You can disable audit logging for a {{{ .essential }}} cluster.
 
-<SimpleTab>
-<div label="Console">
+<SimpleTab groupId="method">
+<div label="Console" value="console">
 
 1. Log in to the [TiDB Cloud console](https://tidbcloud.com/) and navigate to the [**Clusters**](https://tidbcloud.com/project/clusters) page of your project.
 
@@ -223,7 +223,7 @@ You can disable audit logging for a {{{ .essential }}} cluster.
 
 </div>
 
-<div label="CLI">
+<div label="CLI" value="cli">
 
 To disable audit logging using the TiDB Cloud CLI, run the following command:
 
@@ -242,8 +242,8 @@ You can create, edit, disable, and delete an audit logging filter rule.
 
 To create a filter rule, define which users and events you want to capture in the audit logs. You can specify users, event classes, tables, and status codes to tailor the logging to your needs.
 
-<SimpleTab>
-<div label="Console">
+<SimpleTab groupId="method">
+<div label="Console" value="console">
 
 1. Log in to the [TiDB Cloud console](https://tidbcloud.com/) and navigate to the [**Clusters**](https://tidbcloud.com/project/clusters) page of your project.
 
@@ -259,7 +259,7 @@ To create a filter rule, define which users and events you want to capture in th
 
 </div>
 
-<div label="CLI">
+<div label="CLI" value="cli">
 
 To create a filter rule using the TiDB Cloud CLI, run the following command:
 
@@ -272,8 +272,8 @@ ticloud serverless audit-log filter create --cluster-id <cluster-id> --display-n
 
 ### Edit a filter rule
 
-<SimpleTab>
-<div label="Console">
+<SimpleTab groupId="method">
+<div label="Console" value="console">
 
 1. Log in to the [TiDB Cloud console](https://tidbcloud.com/) and navigate to the [**Clusters**](https://tidbcloud.com/project/clusters) page of your project.
 
@@ -289,7 +289,7 @@ ticloud serverless audit-log filter create --cluster-id <cluster-id> --display-n
 
 </div>
 
-<div label="CLI">
+<div label="CLI" value="cli">
 
 To edit a filter rule using the TiDB Cloud CLI, run the following command:
 
@@ -302,8 +302,8 @@ ticloud serverless audit-log filter update --cluster-id <cluster-id> --filter-ru
 
 ### Disable a filter rule
 
-<SimpleTab>
-<div label="Console">
+<SimpleTab groupId="method">
+<div label="Console" value="console">
 
 1. Log in to the [TiDB Cloud console](https://tidbcloud.com/) and navigate to the [**Clusters**](https://tidbcloud.com/project/clusters) page of your project.
 
@@ -317,7 +317,7 @@ ticloud serverless audit-log filter update --cluster-id <cluster-id> --filter-ru
 
 </div>
 
-<div label="CLI">
+<div label="CLI" value="cli">
 
 To disable a filter rule using the TiDB Cloud CLI, run the following command:
 
@@ -330,8 +330,8 @@ ticloud serverless audit-log filter update --cluster-id <cluster-id> --filter-ru
 
 ### Delete a filter rule
 
-<SimpleTab>
-<div label="Console">
+<SimpleTab groupId="method">
+<div label="Console" value="console">
 
 1. Log in to the [TiDB Cloud console](https://tidbcloud.com/) and navigate to the [**Clusters**](https://tidbcloud.com/project/clusters) page of your project.
 
@@ -347,7 +347,7 @@ ticloud serverless audit-log filter update --cluster-id <cluster-id> --filter-ru
 
 </div>
 
-<div label="CLI">
+<div label="CLI" value="cli">
 
 ```shell
 ticloud serverless audit-log filter delete --cluster-id <cluster-id> --filter-rule-id <rule-id>
@@ -365,8 +365,8 @@ When you store audit logs in TiDB Cloud, {{{ .essential }}} saves them as readab
 > - {{{ .essential }}} does not guarantee that audit logs are stored in sequential order. A log file named `YYYY-MM-DD-<index>.log` might contain entries from earlier dates.
 > - To retrieve all logs for a specific date (for example, January 1, 2025), set `--start-date 2025-01-01` and `--end-date 2025-01-02`. In some cases, you might need to download all log files and sort them by the `TIME` field.
 
-<SimpleTab>
-<div label="Console">
+<SimpleTab groupId="method">
+<div label="Console" value="console">
 
 1. Log in to the [TiDB Cloud console](https://tidbcloud.com/) and navigate to the [**Clusters**](https://tidbcloud.com/project/clusters) page of your project.
 
@@ -382,7 +382,7 @@ When you store audit logs in TiDB Cloud, {{{ .essential }}} saves them as readab
 
 </div>
 
-<div label="CLI">
+<div label="CLI" value="cli">
 
 To download audit logs using the TiDB Cloud CLI, run the following command:
 
